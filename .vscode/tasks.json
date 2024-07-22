@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "publish-dashreport",
+      "command": "dotnet",
+      "type": "process",
+      "args": ["publish", "-c", "Release", "-r", "win-x64", "--self-contained"],
+      "options": {
+        "env": {
+          "DOTNET_CLI_TELEMETRY_OPTOUT": "1"
+        }
+      },
+      "problemMatcher": [],
+      "detail": "Published the project as a single file for Windows 64-bit"
+    },
+    {
+      "label": "copy-publish-to-specs",
+      "type": "shell",
+      "command": "xcopy",
+      "args": [
+        "${workspaceFolder}\\DashReport\\bin\\Release\\net8.0\\win-x64\\publish\\*",
+        "..\\DashReport.Specs\\DashReport.Specs\\bin\\Debug\\net8.0\\",
+        "/s",
+        "/e",
+        "/y"
+      ],
+      "problemMatcher": [],
+      "dependsOn": "publish-dashreport",
+      "detail": "Copies published files to the DashReport.Specs bin/Debug directory"
+    }
+  ]
+}

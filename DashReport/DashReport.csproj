@@ -8,6 +8,10 @@
     <AssemblyName>dashreport</AssemblyName>
     <OutputFileName>dashreport.exe</OutputFileName>
     <Version>0.1</Version>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>link</TrimMode>
   </PropertyGroup>
 
   <ItemGroup>
