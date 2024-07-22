@@ -3,7 +3,7 @@ using System.Text;
 
 if (args.Length < 2)
 {
-    Console.WriteLine("Usage: --connection <connection_string> --query <query_file>");
+    Console.WriteLine("Usage: --connection <connection_string> --query-file <query_file>");
     return;
 }
 
@@ -16,7 +16,7 @@ for (int i = 0; i < args.Length; i++)
     {
         connectionString = args[++i];
     }
-    else if (args[i] == "--query")
+    else if (args[i] == "--query-file")
     {
         queryFilePath = args[++i];
     }
@@ -24,7 +24,7 @@ for (int i = 0; i < args.Length; i++)
 
 if (string.IsNullOrEmpty(connectionString) || string.IsNullOrEmpty(queryFilePath))
 {
-    Console.WriteLine("Both --connection and --query arguments are required.");
+    Console.WriteLine("Both --connection and --query-file arguments are required.");
     return;
 }
 

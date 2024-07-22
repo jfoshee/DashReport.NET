@@ -15,7 +15,7 @@
       "detail": "Published the project as a single file for Windows 64-bit"
     },
     {
-      "label": "copy-publish-to-specs",
+      "label": "publish-to-specs",
       "type": "shell",
       "command": "xcopy",
       "args": [
